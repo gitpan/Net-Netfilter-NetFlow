@@ -1,0 +1,37 @@
+---
+abstract: 'App to generate Cisco NetFlow from Linux netfilter'
+author:
+  - 'Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>'
+build_requires:
+  Test::More: 0
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
+distribution_type: module
+generated_by: 'Module::Install version 0.76'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Net-Netfilter-NetFlow
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  Config: 0
+  Config::Any: 0.15
+  Config::General: 0
+  Daemon::Generic: 0
+  Exporter: 0
+  ExtUtils::MakeMaker: 0
+  File::Slurp: 9999.06
+  File::Spec: 0
+  Getopt::Long: 0
+  IPC::Run: 0
+  Log::Dispatch::Configurator::Any: 1.0005
+  POSIX: 0
+  Time::HiRes: 0
+  perl: 5.8.1
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.06
