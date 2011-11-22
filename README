@@ -1,6 +1,8 @@
 NAME
-    Net::Netfilter::NetFlow - App to generate Cisco NetFlow from Linux
-    netfilter
+    nfflowd - App to generate Cisco NetFlow from Linux netfilter
+
+VERSION
+    version 1.113260
 
 PURPOSE
     If you run a Linux based firewall, the "nfflowd" application in this
@@ -29,25 +31,12 @@ SYNOPSIS
          args 65001
      </flow_send>
      ^D
-     
- to start the logger as a daemon:
+ 
+     to start the logger as a daemon:
      ~# nfflowd start
-     
- to specify a custom configuration other than /etc/nfflowd.conf:
+ 
+     to specify a custom configuration other than /etc/nfflowd.conf:
      ~# nfflowd -c /other/config/file.ini
-
-LIMITATIONS
-    *   It's assumed that Source IP NAT is taking place. If not, you may
-        receive additional unecessary log lines, sorry. Work is planned to
-        change the conntrack parser to be configurable for different local
-        modes of operation.
-
-    *   Currently only TCP, UDP and ICMP traffic is logged. Again this will
-        likely be improved as part of the planned changes to the conntrack
-        output parser.
-
-    *   The tool supports only IPv4 tracking. Is there a "conntrack" for
-        IPv6?
 
 DESCRIPTION
     The application "nfflowd" included in this distribution is designed to
@@ -96,6 +85,15 @@ DESCRIPTION
     are correlating the correct two flow records. Seeing as netfilter is
     already accurately tracking every connection, with NAT information, we
     can make use of that data.
+
+LIMITATIONS
+    *   It's assumed that Source IP NAT is taking place. If not, you may
+        receive additional unecessary log lines, sorry.
+
+    *   Currently only TCP, UDP and ICMP traffic is logged.
+
+    *   The tool supports only IPv4 tracking. Is there a "conntrack" for
+        IPv6?
 
 USAGE
     The "nfflowd" application included in this distribution is designed to
@@ -255,11 +253,6 @@ CONFIGURATION
          format   -V5 -s %s/%s/%s
      </flow_send>
 
-PAR Support
-    Simple tests have shown it should be possible to package up this
-    application with PAR, and ship to servers which do not have Perl and/or
-    the Perl module dependencies installed.
-
 DEPENDENCIES
     Other than the standard contents of a Perl 5.8 distribution, you will
     need:
@@ -298,11 +291,11 @@ THANKS
     input and testing infrastructure, many thanks.
 
 AUTHOR
-    Oliver Gorwits "<oliver.gorwits@oucs.ox.ac.uk>"
+    Oliver Gorwits <oliver@cpan.org>
 
-COPYRIGHT & LICENSE
-    Copyright (c) The University of Oxford 2009.
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by University of Oxford.
 
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 
